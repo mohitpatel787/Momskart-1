@@ -1,0 +1,190 @@
+<!-- Header section -->
+<header class="header-section">
+  <div class="header-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-sm-4 text-center text-lg-left">
+          <!-- logo -->
+          <a href="./index.html" class="site-logo">
+            <img src="assets/logo.jpg" alt="">
+            <!-- <span style="text-decoration: none;color:#eb1845;font-size: 28px;margin-top:40px; margin-left:15px;font-family: 'Times New Roman', Times, serif;font-weight: 600">Moms<span style="color:#2c246d">Kart</span> </span> -->
+          </a>
+        </div>
+        <div class="col-xl-4  col-sm-8 searchbar">
+          <form class="header-search-form">
+            <input type="text" placeholder="Search on MomsKart ....">
+            <button><i class="flaticon-search"></i></button>
+          </form>
+        </div>
+        <div class="col-lg-4  center">
+          <div class="user-panel">
+            <div class="up-item">
+              <span class="panel-icons" *ngIf="userData?.name && userData?.profile_pic">
+                <img src="{{userData?.profile_pic}}">
+                Welcome {{userData?.name}}
+                <br />
+                <a style="cursor: pointer" (click)="logout()">Logout</a>
+              </span>
+              <a style="cursor: pointer" data-toggle="modal" data-target="#myModal" *ngIf="!userData" #loginButton>Log In & SignUp </a>
+            </div>
+            <div class="up-item">
+              <div class="shopping-card">
+                <span class="panel-icons"><img src="assets/icons/cart.png"></span>
+                <span class="cart-count">{{cartItemCount}}</span>
+              </div>
+              <a [routerLink]="['/cart']" style="margin-left: 10px;">Cart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark mynavbar">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse mynavinner" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto" style="margin:auto;">
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/']">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" [routerLink]="['/dashboard']">Dashboard</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/categorypage/16/0']">MomsKart Specials</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Sweets
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" [routerLink]="['/categorypage/17/7']">Mithai</a>
+            <a class="dropdown-item" [routerLink]="['/categorypage/17/8']">Choclates & Fudges</a>
+
+            <a class="dropdown-item" [routerLink]="['/categorypage/17/9']">Cakes</a>
+            <a class="dropdown-item" [routerLink]="['/categorypage/17/17']">Jam & Honey</a>
+            <!-- <div class="dropdown-divider"></div>
+            <a class="dropdown-item" [routerLink]="['/categorypage']">EXPLORE ALL</a> -->
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Snacks
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" [routerLink]="['/categorypage/18/10']">Namkeen</a>
+            <a class="dropdown-item" [routerLink]="['/categorypage/18/11']">Biscuits</a>
+
+            <a class="dropdown-item" [routerLink]="['/categorypage/18/12']">Breakfast Cereals & Cheese</a>
+            <a class="dropdown-item" [routerLink]="['/categorypage/18/15']">Cheesey</a>
+            <!-- <div class="dropdown-divider"></div>
+            <a class="dropdown-item" [routerLink]="['/categorypage']">EXPLORE ALL</a> -->
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Pickles
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" [routerLink]="['/categorypage/18/10']">Mango Pickles</a>
+            <a class="dropdown-item" [routerLink]="['/categorypage/18/11']">Chili Pickles</a>
+            <a class="dropdown-item" [routerLink]="['/categorypage/18/12']">Veg Pickles</a>
+            <a class="dropdown-item" [routerLink]="['/categorypage/18/12']">Lime Pickles</a>
+            <a class="dropdown-item" [routerLink]="['/categorypage/18/15']">Chutney</a>
+            <!-- <div class="dropdown-divider"></div>
+            <a class="dropdown-item" [routerLink]="['/categorypage']">EXPLORE ALL</a> -->
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Staples
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" [routerLink]="['/categorypage/18/10']">Atta , Grains & Pulses </a>
+            <a class="dropdown-item" [routerLink]="['/categorypage/18/11']">Oils & Ghees </a>
+            <a class="dropdown-item" [routerLink]="['/categorypage/18/12']">Masala & Mixes </a>
+            <a class="dropdown-item" [routerLink]="['/categorypage/18/12']"> Seasoning  </a>
+            <a class="dropdown-item" [routerLink]="['/categorypage/18/15']">Sauces</a>
+            <a class="dropdown-item" [routerLink]="['/categorypage/18/15']">Papads</a>
+            <a class="dropdown-item" [routerLink]="['/categorypage/18/15']">Mukhwas</a>
+            <!-- <div class="dropdown-divider"></div>
+            <a class="dropdown-item" [routerLink]="['/categorypage']">EXPLORE ALL</a> -->
+          </div>
+        </li>
+        <!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Beverages
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" [routerLink]="['/categorypage/18/10']">Tea </a>
+            <a class="dropdown-item" [routerLink]="['/categorypage/18/11']">Coffee </a>
+            <a class="dropdown-item" [routerLink]="['/categorypage/18/12']"> Squash</a>
+            <a class="dropdown-item" [routerLink]="['/categorypage/18/12']">Drink Mixes </a>
+            <a class="dropdown-item" [routerLink]="['/categorypage/18/15']">Health Drinks</a>
+           
+          </div>
+        </li> -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Dry Fruits & Seeds
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" [routerLink]="['/categorypage/18/10']">Chia Seeds </a>
+            <a class="dropdown-item" [routerLink]="['/categorypage/18/11']">Nuts Trail Mixes </a>
+            <a class="dropdown-item" [routerLink]="['/categorypage/18/12']"> Flaxseeds</a>
+            <a class="dropdown-item" [routerLink]="['/categorypage/18/12']">Seeds  </a>
+            <a class="dropdown-item" [routerLink]="['/categorypage/18/15']">Health Snacks</a>
+            <!-- <div class="dropdown-divider"></div>
+            <a class="dropdown-item" [routerLink]="['/categorypage']">EXPLORE ALL</a> -->
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Shop By Places
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" [routerLink]="['/categorypage/18/10']">North India</a>
+            <a class="dropdown-item" [routerLink]="['/categorypage/18/11']">West India</a>
+            <a class="dropdown-item" [routerLink]="['/categorypage/18/11']">Central India</a>
+            <a class="dropdown-item" [routerLink]="['/categorypage/18/12']">East India</a>
+            <a class="dropdown-item" [routerLink]="['/categorypage/18/15']">South India</a>
+            <!-- <div class="dropdown-divider"></div>
+            <a class="dropdown-item" [routerLink]="['/categorypage']">EXPLORE ALL</a> -->
+          </div>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#">The Shortlist</a>
+        </li> -->
+        <!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Pages
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#" [routerLink]="['/cart']">Cart Page</a>
+            <a class="dropdown-item" href="#" [routerLink]="['/categorypage']">Category Page</a>
+
+            <a class="dropdown-item" href="#" [routerLink]="['/contact']">Contact Page</a>
+            <a class="dropdown-item" href="#" [routerLink]="['/cart']">Checkout Page</a>
+          </div>
+        </li> -->
+        <!-- <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/blogs']" href="#">Blogs</a>
+        </li> -->
+
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<app-login-signup-model (eventEmitter)="performAction($event)"></app-login-signup-model>

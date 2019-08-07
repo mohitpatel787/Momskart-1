@@ -1,0 +1,58 @@
+<!--Modal: Login / Register Form-->
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <button type="button" class="cross-btn" data-dismiss="modal" #crossBtn>&times;</button>
+  <div class="modal-dialog " >
+    <!-- Modal content-->
+   
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="container" id="container"></div>
+          <mat-tab-group>
+            <mat-tab label="LOGIN" class="active" style="font-weight: bold !important">
+              <ng-template matTabContent>
+                  <div class="login-box modal-box">
+                  <form [formGroup]="createLoginForm" #loginForm="ngForm" autocomplete="off" #loginForm (ngSubmit)="login()">
+                    <strong class="alert alert-danger" *ngIf="errorMsg">{{errorMsg}}</strong>
+                    <h1>LOGIN</h1>
+                    <input type="text" formControlName="email" placeholder="Email" />
+                    <div *ngIf="submitted && createLoginForm.invalid">
+                      <div *ngIf="createLoginForm.controls.email.errors?.required">Email is required</div>
+                    </div>
+                    <input type="password" formControlName="password" placeholder="Password" />
+                    <div *ngIf="submitted && createLoginForm.invalid">
+                      <div *ngIf="createLoginForm.controls.password.errors?.required">Password is required</div>
+                    </div>
+
+                    <a href="#" class="forgot-password">Forgot your password?</a>
+                    <button type="submit" (mousedown)="$event.preventDefault()"> LOGIN</button>
+                  </form>
+                  </div>
+               
+              </ng-template>
+            </mat-tab>
+            <mat-tab label="SIGN UP" class="active" style="font-weight: bold !important">
+              <ng-template matTabContent>
+                <div class="sign-up-box modal-box">
+                  <form action="#">
+                    <h1>Create Account</h1>
+                   
+                    <input type="text" placeholder="Name" />
+                    <input type="email" placeholder="Email" />
+                    <input type="number" placeholder="Mobile No." />
+                    <input type="password" placeholder="Password" />
+                    <input type="password" placeholder="Confirm Password" />
+                    <button>Sign Up</button>
+                   
+                    
+                     
+                  </form>
+                </div>
+              </ng-template>
+            </mat-tab>
+          </mat-tab-group>
+        
+      </div>
+    </div>
+  </div>
+</div>
