@@ -91,9 +91,11 @@ ol {
 }
 
 .section-title h2 {
-	font-size: 50px;
-	font-family: 'Poiret One', cursive;
-	margin-top: 2%;
+	font-size: 42px;
+    font-family: 'Poiret One', cursive;
+    margin: auto;
+    margin-top: 2%;
+    width: 70%;
 }
 
 .set-bg {
@@ -345,12 +347,13 @@ ol {
 	margin-top:-30px;
 }
 .site-logo img{
-	width: 50%;
+	width: 100%;
 }
 .header-search-form {
-	width: 90%;
+	width: 80%;
 	position: relative;
 	padding: 0 10px;
+	margin:auto;
 }
 .page-title{
 	text-align: center;
@@ -1016,14 +1019,21 @@ ol {
 }
 
 .product-filter-menu li {
-		margin: 0 10px 10px;
-		display: inline-block;
-    width: 23%;
+    
     box-sizing: border-box;
     background: gainsboro;
-    height: 10vh;
 	border-radius: 31px;
-	transition: 0.3s all;
+	height: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	margin: 22px auto;
+}
+
+.product-filter-menu img{
+	margin:auto;
+	height: 200px;
 }
 
 
@@ -1032,12 +1042,6 @@ ol {
     font-size: 15px;
     font-weight: 700;
     text-transform: uppercase;
-    /*background: #ebebeb;*/
-    display: block;
-		width: 100%;
-		padding-top: 21px;
-   
-    /*border-radius: 31px;*/
 }
 
 /* ----------------
@@ -1319,16 +1323,43 @@ ol {
   Category page
 ------------------*/
 
+/* width */
+.filter-widget ul::-webkit-scrollbar {
+	width: 8px;
+	height: 0px;
+  }
+  
+  /* Track */
+  .filter-widget ul::-webkit-scrollbar-track {
+	background: #b3b3b3; 
+  }
+  
+  /* Handle */
+  .filter-widget ul::-webkit-scrollbar-thumb {
+	background: rgb(77, 77, 77); 
+  }
+  
+  /* Handle on hover */
+  .filter-widget ul::-webkit-scrollbar-thumb:hover {
+	background: rgb(41, 41, 41); 
+  }
 .filter-widget {
 	margin-bottom: 100px;
 }
 
 .filter-widget .fw-title {
 	font-size: 14px;
-	font-weight: 700;
-	color: #414141;
-	text-transform: uppercase;
-	margin-bottom: 25px;
+    font-weight: 700;
+    color: #414141;
+    line-height: 32px;
+   
+    border-bottom: 1px solid #ddd;
+    
+    margin-bottom: 14px;
+}
+
+.dashboard .contact-form input,.dashboard  .contact-form textarea,.dashboard  .contact-form select{
+background: white;
 }
 
 .filter-widget .fw-title a{
@@ -2332,12 +2363,16 @@ ol {
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 	.site-logo {
 		margin-bottom: 20px;
+		text-align: center;
+	}
+	.site-logo img{
+		width: 50%;
 	}
 	.header-search-form {
 		margin-bottom: 15px;
 	}
 	.user-panel {
-		text-align: center;
+		/* text-align: center; */
 	}
 	.main-menu {
 		text-align: center;
@@ -2386,24 +2421,36 @@ ol {
 	}
 }
 
+.user-panel-mobile{
+	display: none;
+}
+
 /* Large Mobile :480px. */
 
 @media only screen and (max-width: 479px) {
 	.site-logo {
-		margin-bottom: -60px;
-		width: 80%;
-		float: left;
-		margin-top: 1px;
-		
+		width:60%;
 	}
-	.searchbar{
+	.momskart-logo-wrap{
+		text-align: center;
+	}
+	.user-panel-mobile{
+		display: inline-block;
+		width: 100%;
+		padding: 20px 10px;
+		border-top: 1px solid rgba(88, 88, 88, 0.397);
+		border-bottom: 1px solid rgba(88, 88, 88, 0.397);
+	}
+	
+	.user-panel-desktop{
+		display: none;
+	}
+	/* .searchbar{
 		margin-top:50px;
-	}
+	} */
 	.header-search-form {
-		margin-bottom: 35px;
-		margin-top: 19px;
-		float: right;
-    width: 75%;
+		margin: 15px auto;
+		width: 100%;
 }
 	
 	.user-panel {
@@ -2444,13 +2491,9 @@ ol {
 		text-align: center;
 	}
 	.product-filter-menu li {
-		margin: 0 2px 10px;
-    width: 48%;
-    box-sizing: border-box;
-							
+    box-sizing: border-box;			
     background: gainsboro;
-    height: 10vh;
-   
+    
     border-radius: 31px;
 	}
 	.footer-widget ul {

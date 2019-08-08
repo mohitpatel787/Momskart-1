@@ -3,21 +3,40 @@
   <div class="header-top">
     <div class="container">
       <div class="row">
-        <div class="col-lg-4 col-sm-4 text-center text-lg-left">
+        <div class="col-lg-2 momskart-logo-wrap">
           <!-- logo -->
           <a href="./index.html" class="site-logo">
             <img src="assets/logo.jpg" alt="">
             <!-- <span style="text-decoration: none;color:#eb1845;font-size: 28px;margin-top:40px; margin-left:15px;font-family: 'Times New Roman', Times, serif;font-weight: 600">Moms<span style="color:#2c246d">Kart</span> </span> -->
           </a>
+
+          <div class="user-panel user-panel-mobile">
+            <div class="up-item">
+              <span class="panel-icons" *ngIf="userData?.name && userData?.profile_pic">
+                <img src="{{userData?.profile_pic}}">
+                Welcome {{userData?.name}}
+                <br />
+                <a style="cursor: pointer" (click)="logout()">Logout</a>
+              </span>
+              <a style="cursor: pointer" data-toggle="modal" data-target="#myModal" *ngIf="!userData" #loginButton>Log In & SignUp </a>
+            </div>
+            <div class="up-item">
+              <div class="shopping-card">
+                <span class="panel-icons"><img src="assets/icons/cart.png"></span>
+                <span class="cart-count">{{cartItemCount}}</span>
+              </div>
+              <a [routerLink]="['/cart']" style="margin-left: 10px;">Cart</a>
+            </div>
+          </div>
         </div>
-        <div class="col-xl-4  col-sm-8 searchbar">
+        <div class="col-lg-6  searchbar">
           <form class="header-search-form">
             <input type="text" placeholder="Search on MomsKart ....">
             <button><i class="flaticon-search"></i></button>
           </form>
         </div>
-        <div class="col-lg-4  center">
-          <div class="user-panel">
+        <div class="col-lg-4 text-right">
+          <div class="user-panel user-panel-desktop">
             <div class="up-item">
               <span class="panel-icons" *ngIf="userData?.name && userData?.profile_pic">
                 <img src="{{userData?.profile_pic}}">
@@ -52,6 +71,18 @@
         </li>
         <li class="nav-item active">
             <a class="nav-link" [routerLink]="['/dashboard']">Dashboard</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Payment Pages
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" [routerLink]="['/thankyou']">Payment Successful</a>
+              <a class="dropdown-item" [routerLink]="['/sorry']">Payment Failed</a>
+              <!-- <div class="dropdown-divider"></div>
+              <a class="dropdown-item" [routerLink]="['/categorypage']">EXPLORE ALL</a> -->
+            </div>
           </li>
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/categorypage/16/0']">MomsKart Specials</a>
@@ -135,7 +166,7 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
-            Dry Fruits & Seeds
+            Dry Fruits&Seeds
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" [routerLink]="['/categorypage/18/10']">Chia Seeds </a>
@@ -150,7 +181,7 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
-            Shop By Places
+            Shop By Cultures
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" [routerLink]="['/categorypage/18/10']">North India</a>

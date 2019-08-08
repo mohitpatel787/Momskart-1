@@ -39,10 +39,20 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { EditAccountComponent } from './edit-account/edit-account.component';
 import { EditAddressComponent } from './edit-address/edit-address.component';
 import { AboutComponent } from './about/about.component';
+import { PaymentFailComponent } from './payment-fail/payment-fail.component';
+import { PaymentSuccessComponent } from './payment-success/payment-success.component';
 
 
 const routes: Routes =[
  
+   {
+    path :'sorry',
+    component:PaymentFailComponent
+  },
+  {
+    path :'thankyou',
+    component:PaymentSuccessComponent
+  },
   {
     path :'about',
     component:AboutComponent
@@ -134,7 +144,9 @@ const routes: Routes =[
     DashboardComponent,
     EditAccountComponent,
     EditAddressComponent,
-    AboutComponent
+    AboutComponent,
+    PaymentFailComponent,
+    PaymentSuccessComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

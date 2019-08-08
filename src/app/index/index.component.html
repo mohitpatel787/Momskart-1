@@ -110,7 +110,7 @@
 			<h2>CURRENT BESTSELLERS</h2>
 		</div>
 	<div class="row">
-		<div class="col-lg-3">
+		<div class="col-lg-3 col-md-6 col-sm-6">
 			<div class="product-item">
 				<div class="pi-pic">
 					<a [routerLink]="['/prodesc',id4]"> <img src="./assets/product/4.jpg" alt=""></a>
@@ -128,7 +128,7 @@
 			</div>
 
 		</div>
-		<div class="col-lg-3">
+		<div class="col-lg-3 col-md-6 col-sm-6">
 			<div class="product-item">
 				<div class="pi-pic">
 					<a [routerLink]="['/prodesc',id4]"> <img src="./assets/product/4.jpg" alt=""></a>
@@ -146,7 +146,7 @@
 			</div>
 
 		</div>
-		<div class="col-lg-3">
+		<div class="col-lg-3 col-md-6 col-sm-6">
 			<div class="product-item">
 				<div class="pi-pic">
 					<a [routerLink]="['/prodesc',id4]"> <img src="./assets/product/4.jpg" alt=""></a>
@@ -164,7 +164,7 @@
 			</div>
 
 		</div>
-		<div class="col-lg-3">
+		<div class="col-lg-3 col-md-6 col-sm-6">
 			<div class="product-item">
 				<div class="pi-pic">
 					<a [routerLink]="['/prodesc',id4]"> <img src="./assets/product/4.jpg" alt=""></a>
@@ -182,7 +182,7 @@
 			</div>
 
 		</div>
-		<div class="col-lg-3">
+		<div class="col-lg-3 col-md-6 col-sm-6">
 			<div class="product-item">
 				<div class="pi-pic">
 					<a [routerLink]="['/prodesc',id4]"> <img src="./assets/product/4.jpg" alt=""></a>
@@ -200,7 +200,7 @@
 			</div>
 
 		</div>
-		<div class="col-lg-3">
+		<div class="col-lg-3 col-md-6 col-sm-6">
 			<div class="product-item">
 				<div class="pi-pic">
 					<a [routerLink]="['/prodesc',id4]"> <img src="./assets/product/4.jpg" alt=""></a>
@@ -218,7 +218,7 @@
 			</div>
 
 		</div>
-		<div class="col-lg-3">
+		<div class="col-lg-3 col-md-6 col-sm-6">
 			<div class="product-item">
 				<div class="pi-pic">
 					<a [routerLink]="['/prodesc',id4]"> <img src="./assets/product/4.jpg" alt=""></a>
@@ -236,7 +236,7 @@
 			</div>
 
 		</div>
-		<div class="col-lg-3">
+		<div class="col-lg-3 col-md-6 col-sm-6">
 			<div class="product-item">
 				<div class="pi-pic">
 					<a [routerLink]="['/prodesc',id4]"> <img src="./assets/product/4.jpg" alt=""></a>
@@ -302,7 +302,7 @@
 		</div>
 		<BR><BR><BR>
 		<div class="row">
-			<div class="col-lg-3 col-sm-6" *ngFor="let item of list |slice:8">
+			<div class="col-lg-3 col-md-6 col-sm-6 col-sm-6" *ngFor="let item of list |slice:8">
 				<div class="product-item">
 					<div class="pi-pic">
 						<div class="tag-new">NEW</div>
@@ -332,39 +332,30 @@
 			<h2>DISCOVER GREATS FOOD FROM MOMS ALL OVER COUNTRY</h2>
 		</div>
 
-		<div class="row">
-			<div class="col-lg-3">
+		<div class="row product-filter-menu">
+			<div class="col-lg-3 col-md-6 col-sm-6">
 				<img src="assets/1.png" alt="" class="img-fluid">
+				<li><a href="#">(KOLHAPUR)</a></li>
 			</div>
-			<div class="col-lg-3">
+			<div class="col-lg-3 col-md-6 col-sm-6">
 				<img src="assets/2.jpg" alt="" class="img-fluid">
+				<li><a href="#"> (KERELA)
+				</a></li>
 			</div>
-			<div class="col-lg-3">
+			<div class="col-lg-3 col-md-6 col-sm-6">
 				<img src="assets/3.jpg" alt="" class="img-fluid">
+				<li><a href="#"> (KOLKATA)
+				</a></li>
 			</div>
-			<div class="col-lg-3">
+			<div class="col-lg-3 col-md-6 col-sm-6">
 				<img src="assets/4.jpg" alt="" class="img-fluid">
+				<li><a href="#">(MUMBAI)
+				</a></li>
 			</div>
 		</div>
 
 
-		<ul class="product-filter-menu">
-			<li><a href="#">(KOLHAPUR)</a></li>
-			<li><a href="#"> (KERELA)
-				</a></li>
-			<li><a href="#"> (KOLKATA)
-				</a></li>
-			<li><a href="#">(MUMBAI)
-				</a></li>
-			<li><a href="#"> (PUNJAB)
-				</a></li>
-			<li><a href="#"> (JAIPUR)
-				</a></li>
-			<li><a href="#"> (INDORE)
-				</a></li>
-			<li><a href="#"> (JAIPUR)
-				</a></li>
-		</ul>
+		
 	</div>
 </section>
 
@@ -379,7 +370,7 @@
 		</div>
 		<BR><BR><BR>
 		<div class="row">
-			<div class="col-lg-3 col-sm-6" *ngFor="let item of list |slice:4">
+			<div class="col-lg-3 col-md-6 col-sm-6 col-sm-6" *ngFor="let item of list |slice:4">
 				<div class="product-item">
 					<div class="pi-pic">
 						<a [routerLink]="['/prodesc',item.id]"><img src={{item.img}} alt=""> </a>
