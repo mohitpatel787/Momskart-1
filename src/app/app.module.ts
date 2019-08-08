@@ -149,7 +149,7 @@ const routes: Routes =[
     PaymentSuccessComponent
   ],
   imports: [
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes,{useHash: true}),
     BrowserModule,
     OwlModule,
     BrowserAnimationsModule,
